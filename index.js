@@ -9,30 +9,61 @@ class Numbers {
       this.data = data;
     }
   }
-  count() {
-    //return the count of numbers in data
+          count() {
+    // .just grabbing the length of the array
+    //return the count of numbers in the array
+    return this.data.length;
   }
-  printNumbers() {
+
+
+
+
+          printNumbers() {
+    // print is consolelog - .join will turn the array into a string
+    // Then use (",") as the parameter as a seporator
     //print the numbers in data
+    console.log(this.data.join(", "));
   }
-  odds() {
+            odds() {
+    // return this data -  filter => if number is modulus 2 is not equal to 0
+
+    return this.data.filter(number => number % 2 !== 0);
     //return the odd numbers in data
   }
+
+
+
+  // Same as oods but this time it has to strictly equal 0.
+
+
   evens() {
+    return this.data.filter(number => number % 2 === 0);
     //return the even numbers in data
   }
+
+
   sum() {
+    // had help with this one, i know i am using reduce to iterate over the array and add the numbers to the accumulator
+    // numbner is the value in the index 
+    return this.data.reduce((acc, number) => acc + number, 0);
     //return the sum of the numbers
   }
+
   product() {
+    return this.data.reduce((acc, number) => acc * number, 1);
     //return the product of the numbers
   }
-  greaterThan(target) {
+                greaterThan(target) {
+    return this.data.filter(number => number > target);
+  }
     //return the numbers greater than the target
+  
+
+    howMany(target) {
+  return this.data.filter(number => number === target).length;
   }
-  howMany(target) {
     //return the count of a given number
-  }
+
 }
 
 //Prompt the user for a list of integers separated by commas
